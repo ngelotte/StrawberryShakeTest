@@ -1,0 +1,12 @@
+{
+  "schema": "schema.graphql",
+  "documents": "**/*.graphql",
+  "extensions": {
+    "strawberryShake": {
+      "name": "GraphQlClient",
+      "namespace": "RainOneClient.GraphQL",
+      "url": "https://rainonedevbe.rainforgrowth.com/",
+      "dependencyInjection": true
+    }
+  }
+}

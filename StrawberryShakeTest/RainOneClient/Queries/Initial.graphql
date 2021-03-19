@@ -1,0 +1,15 @@
+﻿query GetPeople 
+{
+  rainOnePeople
+  {
+    displayName,
+    Id,
+    rainOnePersonLinks{
+      displayName,
+      emailAddress,
+      personLinkType,
+      rainOnePersonId
+    },
+    primaryEmailAddress
+  }
+}

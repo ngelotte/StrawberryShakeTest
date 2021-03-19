@@ -1,0 +1,164 @@
+﻿schema {
+  query: RainQuery
+  mutation: RainMutations
+}
+
+type RainQuery {
+  rainOnePeople(order_by: RainOnePersonSort where: RainOnePersonFilter): [RainOnePerson!]!
+}
+
+type RainMutations {
+  deleteRainOnePerson(id: Int!): Boolean!
+  updateRainOnePerson(rainOnePerson: RainOnePersonInput!): RainOnePerson!
+
+}
+
+input RainOnePersonFilter {
+  AND: [RainOnePersonFilter!]
+  displayName: String
+  displayName_contains: String
+  displayName_ends_with: String
+  displayName_in: [String!]
+  displayName_not: String
+  displayName_not_contains: String
+  displayName_not_ends_with: String
+  displayName_not_in: [String!]
+  displayName_not_starts_with: String
+  displayName_starts_with: String
+  id: Int
+  id_gt: Int
+  id_gte: Int
+  id_in: [Int!]
+  id_lt: Int
+  id_lte: Int
+  id_not: Int
+  id_not_gt: Int
+  id_not_gte: Int
+  id_not_in: [Int!]
+  id_not_lt: Int
+  id_not_lte: Int
+  OR: [RainOnePersonFilter!]
+  primaryEmailAddress: String
+  primaryEmailAddress_contains: String
+  primaryEmailAddress_ends_with: String
+  primaryEmailAddress_in: [String!]
+  primaryEmailAddress_not: String
+  primaryEmailAddress_not_contains: String
+  primaryEmailAddress_not_ends_with: String
+  primaryEmailAddress_not_in: [String!]
+  primaryEmailAddress_not_starts_with: String
+  primaryEmailAddress_starts_with: String
+}
+
+input RainOnePersonSort {
+  displayName: SortOperationKind
+  id: SortOperationKind
+  primaryEmailAddress: SortOperationKind
+}
+
+type RainOnePerson {
+  displayName: String!
+  id: Int!
+  primaryEmailAddress: String!
+  rainOnePersonLinks(where: RainOnePersonLinkFilter): [RainOnePersonLink!]!
+}
+
+
+input RainOnePersonLinkFilter {
+  AND: [RainOnePersonLinkFilter!]
+  displayName: String
+  displayName_contains: String
+  displayName_ends_with: String
+  displayName_in: [String!]
+  displayName_not: String
+  displayName_not_contains: String
+  displayName_not_ends_with: String
+  displayName_not_in: [String!]
+  displayName_not_starts_with: String
+  displayName_starts_with: String
+  emailAddress: String
+  emailAddress_contains: String
+  emailAddress_ends_with: String
+  emailAddress_in: [String!]
+  emailAddress_not: String
+  emailAddress_not_contains: String
+  emailAddress_not_ends_with: String
+  emailAddress_not_in: [String!]
+  emailAddress_not_starts_with: String
+  emailAddress_starts_with: String
+  id: Int
+  id_gt: Int
+  id_gte: Int
+  id_in: [Int!]
+  id_lt: Int
+  id_lte: Int
+  id_not: Int
+  id_not_gt: Int
+  id_not_gte: Int
+  id_not_in: [Int!]
+  id_not_lt: Int
+  id_not_lte: Int
+  OR: [RainOnePersonLinkFilter!]
+  personLinkType: PersonLinkType
+  personLinkType_gt: PersonLinkType
+  personLinkType_gte: PersonLinkType
+  personLinkType_in: [PersonLinkType!]
+  personLinkType_lt: PersonLinkType
+  personLinkType_lte: PersonLinkType
+  personLinkType_not: PersonLinkType
+  personLinkType_not_gt: PersonLinkType
+  personLinkType_not_gte: PersonLinkType
+  personLinkType_not_in: [PersonLinkType!]
+  personLinkType_not_lt: PersonLinkType
+  personLinkType_not_lte: PersonLinkType
+  rainOnePersonId: Int
+  rainOnePersonId_gt: Int
+  rainOnePersonId_gte: Int
+  rainOnePersonId_in: [Int!]
+  rainOnePersonId_lt: Int
+  rainOnePersonId_lte: Int
+  rainOnePersonId_not: Int
+  rainOnePersonId_not_gt: Int
+  rainOnePersonId_not_gte: Int
+  rainOnePersonId_not_in: [Int!]
+  rainOnePersonId_not_lt: Int
+  rainOnePersonId_not_lte: Int
+  uniqueIdentifier: String
+  uniqueIdentifier_contains: String
+  uniqueIdentifier_ends_with: String
+  uniqueIdentifier_in: [String!]
+  uniqueIdentifier_not: String
+  uniqueIdentifier_not_contains: String
+  uniqueIdentifier_not_ends_with: String
+  uniqueIdentifier_not_in: [String!]
+  uniqueIdentifier_not_starts_with: String
+  uniqueIdentifier_starts_with: String
+}
+
+
+type RainOnePersonLink {
+  displayName: String!
+  emailAddress: String!
+  id: Int!
+  personLinkType: PersonLinkType!
+  rainOnePerson: RainOnePerson!
+  rainOnePersonId: Int!
+  uniqueIdentifier: String!
+}
+
+input RainOnePersonLinkInput {
+  displayName: String!
+  emailAddress: String!
+  id: Int!
+  personLinkType: PersonLinkType!
+  rainOnePerson: RainOnePersonInput!
+  rainOnePersonId: Int!
+  uniqueIdentifier: String!
+}
+
+
+enum PersonLinkType {
+  B2CUNIQUEID
+  FINOPS
+  TRACKER
+}
