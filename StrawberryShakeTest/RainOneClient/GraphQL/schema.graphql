@@ -4,13 +4,15 @@
 }
 
 type RainQuery {
-  rainOnePeople(order_by: RainOnePersonSort where: RainOnePersonFilter): [RainOnePerson!]!
+  rainOnePeople(
+    order_by: RainOnePersonSort
+    where: RainOnePersonFilter
+  ): [RainOnePerson!]!
 }
 
 type RainMutations {
   deleteRainOnePerson(id: Int!): Boolean!
   updateRainOnePerson(rainOnePerson: RainOnePersonInput!): RainOnePerson!
-
 }
 
 input RainOnePersonFilter {
@@ -62,7 +64,6 @@ type RainOnePerson {
   primaryEmailAddress: String!
   rainOnePersonLinks(where: RainOnePersonLinkFilter): [RainOnePersonLink!]!
 }
-
 
 input RainOnePersonLinkFilter {
   AND: [RainOnePersonLinkFilter!]
@@ -135,7 +136,6 @@ input RainOnePersonLinkFilter {
   uniqueIdentifier_starts_with: String
 }
 
-
 type RainOnePersonLink {
   displayName: String!
   emailAddress: String!
@@ -156,9 +156,17 @@ input RainOnePersonLinkInput {
   uniqueIdentifier: String!
 }
 
-
 enum PersonLinkType {
   B2CUNIQUEID
   FINOPS
   TRACKER
+}
+
+enum SortOperationKind {
+  ASC
+  DESC
+}
+
+input RainOnePersonInput {
+  foo: String
 }
