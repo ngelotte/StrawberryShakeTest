@@ -3,7 +3,7 @@
   rainOnePeople
   {
     displayName,
-    Id,
+    id,
     rainOnePersonLinks{
       displayName,
       emailAddress,
